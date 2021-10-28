@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import api from '../../services/api';
 import './style.css'
 
-const ENDPOINT = 'http://localhost:3333'
+const ENDPOINT = process.env.REACT_APP_API_URL
 
 export default function Dashboard(){
 
