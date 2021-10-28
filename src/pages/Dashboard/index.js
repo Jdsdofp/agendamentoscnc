@@ -21,7 +21,6 @@ export default function Dashboard(){
        socket.on('booking_request', data=>{
            setRequests([ ...requests, data ])
 
-           console.log(data)
        })
     }, [requests, socket]);
     
@@ -54,7 +53,7 @@ export default function Dashboard(){
                 {requests.map(request =>(
                     <li key={request._id}>
                         <p>
-                            <strong>{request.user.email}</strong> está solicitando uma reserva em <strong>{request.spot.company}</strong>
+                            <strong>{request.user}</strong> está solicitando uma reserva em <strong>{request.spot.company}</strong>
                             para a data: <strong>{request.date}</strong>
                         </p>
 
