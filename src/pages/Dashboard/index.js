@@ -21,7 +21,7 @@ export default function Dashboard(){
        socket.on('booking_request', data=>{
            setRequests([ ...requests, data ])
 
-           console.log(requests)
+           console.log(data)
        })
     }, [requests, socket]);
     
