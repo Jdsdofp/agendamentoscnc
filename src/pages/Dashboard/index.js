@@ -20,7 +20,7 @@ export default function Dashboard(){
     useEffect(()=>{
        socket.on('booking_request', data=>{
            setRequests([ ...requests, data ])
-
+           console.log(data)
        })
     }, [requests, socket]);
     
@@ -31,7 +31,6 @@ export default function Dashboard(){
                 headers: { user_id }
             });
             setSpots(response.data)
-            console.log(response.data)
         }
         loadSpots();
     }, [])
@@ -54,6 +53,7 @@ export default function Dashboard(){
                 {requests.map(request =>(
                     <li key={request._id}>
                         <p>
+                        p
                             <strong>{request.user}</strong> está solicitando uma reserva em <strong>{request.spot.company}</strong>
                             para a data: <strong>{request.date}</strong>
                         </p>
