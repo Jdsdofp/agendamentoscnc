@@ -13,14 +13,7 @@ export default function Dashboard(){
 
     const user_id = localStorage.getItem('user');            
     
-    const socket = useMemo(() => io(ENDPOINT, cors: {
-        cors: {
-            origin: "*",
-            methods: ["GET", "POST"],
-            allowedHeaders: ["my-custom-header"],
-            credentials: false
-        }
-    }, {
+    const socket = useMemo(() => io(ENDPOINT, {
         query:  {user_id }
     }), [user_id]);
 
