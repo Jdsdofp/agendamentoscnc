@@ -13,14 +13,21 @@ export default function Dashboard(){
 
     const user_id = localStorage.getItem('user');            
     
-    const socket = useMemo(() => io(ENDPOINT, {
+    const socket = useMemo(() => io(ENDPOINT, cors: {
+        cors: {
+            origin: "*",
+            methods: ["GET", "POST"],
+            allowedHeaders: ["my-custom-header"],
+            credentials: false
+        }
+    }, {
         query:  {user_id }
     }), [user_id]);
 
     useEffect(()=>{
        socket.on('booking_request', data=>{
            setRequests([ ...requests, data ])
-           console.log(data)
+           
        })
     }, [requests, socket]);
     
