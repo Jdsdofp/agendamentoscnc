@@ -12,7 +12,7 @@ export default function Dashboard(){
 
     const user_id = localStorage.getItem('user');            
     
-    const socket = useMemo(() => io('https://backendcnc.herokuapp.com/', {
+    const socket = useMemo(() => io('https://backendcnc.herokuapp.com', {
         query:  {user_id }
     }), [user_id]);
 
