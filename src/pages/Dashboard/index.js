@@ -4,7 +4,6 @@ import io from 'socket.io-client';
 import api from '../../services/api';
 import './style.css'
 
-const ENDPOINT = process.env.REACT_APP_API_URL
 
 export default function Dashboard(){
 
@@ -13,7 +12,7 @@ export default function Dashboard(){
 
     const user_id = localStorage.getItem('user');            
     
-    const socket = useMemo(() => io(ENDPOINT, {
+    const socket = useMemo(() => io('https://backendcnc.herokuapp.com/', {
         query:  {user_id }
     }), [user_id]);
 
