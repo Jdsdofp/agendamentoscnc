@@ -52,7 +52,7 @@ export default function Dashboard(){
                 {requests.map(request =>(
                     <li key={request._id}>
                         <p>
-                            <strong>{request.spot.user.email}</strong> está solicitando uma reserva em <strong>{request.spot.company}</strong>
+                            <strong>{request.user.email}</strong> está solicitando uma reserva em <strong>{request.spot.company}</strong>
                             para a data: <strong>{request.date}</strong>
                         </p>
 
