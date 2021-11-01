@@ -29,7 +29,6 @@ export default function Dashboard(){
             const response = await api.get('/dashboard', {
                 headers: { user_id }
             });
-            console.log(response)
             setSpots(response.data)
         }
         loadSpots();
