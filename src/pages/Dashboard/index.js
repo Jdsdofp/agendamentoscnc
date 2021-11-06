@@ -30,7 +30,7 @@ export default function Dashboard(){
                 headers: { user_id }
             });
             setSpots(response.data)
-            console.log(response.data.user._id.email)
+            console.log(response.data.user.id.email)
         }
         loadSpots();
     }, [])
